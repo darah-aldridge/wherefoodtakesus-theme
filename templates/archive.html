@@ -1,0 +1,39 @@
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","layout":{"type":"constrained"}} -->
+<main class="wp-block-group">
+
+	<!-- wp:query-title {"type":"archive"} /-->
+
+	<!-- wp:group {"className":"wftu-archive-filters"} -->
+	<div class="wp-block-group wftu-archive-filters">
+		<!--
+			PLACEHOLDER — Phase: Replace filtering (JetSmartFilters swap)
+			This is where the destination/category filter UI goes: a custom
+			block or template-part that fires an AJAX request against
+			WP_Query (via a small REST endpoint or admin-ajax) and swaps
+			the Query block's results below without a full page reload.
+		-->
+	</div>
+	<!-- /wp:group -->
+
+	<!-- wp:query {"queryId":0,"query":{"perPage":10,"inherit":true}} -->
+	<div class="wp-block-query">
+		<!-- wp:post-template -->
+			<!-- wp:post-title {"isLink":true} /-->
+			<!-- wp:post-featured-image {"isLink":true} /-->
+			<!-- wp:post-excerpt /-->
+		<!-- /wp:post-template -->
+
+		<!-- wp:query-pagination -->
+			<!-- wp:query-pagination-previous /-->
+			<!-- wp:query-pagination-numbers /-->
+			<!-- wp:query-pagination-next /-->
+		<!-- /wp:query-pagination -->
+	</div>
+	<!-- /wp:query -->
+
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->

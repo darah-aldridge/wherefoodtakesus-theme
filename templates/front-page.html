@@ -1,0 +1,31 @@
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","layout":{"type":"constrained"}} -->
+<main class="wp-block-group">
+
+	<!-- wp:group {"className":"wftu-hero","layout":{"type":"constrained"}} -->
+	<div class="wp-block-group wftu-hero">
+		<!-- wp:heading {"level":1} -->
+		<h1>Where Food Takes Us</h1>
+		<!-- /wp:heading -->
+
+		<!-- wp:paragraph -->
+		<p>Food, hikes, and road trips from wherever we've ended up.</p>
+		<!-- /wp:paragraph -->
+	</div>
+	<!-- /wp:group -->
+
+	<!-- wp:query {"queryId":0,"query":{"perPage":6,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","inherit":false}} -->
+	<div class="wp-block-query">
+		<!-- wp:post-template -->
+			<!-- wp:post-title {"isLink":true} /-->
+			<!-- wp:post-featured-image {"isLink":true} /-->
+			<!-- wp:post-excerpt /-->
+		<!-- /wp:post-template -->
+	</div>
+	<!-- /wp:query -->
+
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->

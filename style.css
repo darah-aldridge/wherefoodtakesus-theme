@@ -1,0 +1,25 @@
+/*
+Theme Name: Where Food Takes Us
+Theme URI: https://wherefoodtakesus.com
+Author: Garrah
+Author URI: https://darahaldridge.com
+Description: Custom block theme for wherefoodtakesus.com — built from scratch to replace Twenty Twenty Three, with design and functionality matching the previous JetEngine/Spectra-based site.
+Version: 0.1.0
+Requires at least: 6.5
+Tested up to: 7.0
+Requires PHP: 8.0
+License: GPL v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: wherefoodtakesus
+
+This file is intentionally almost empty. In a block theme, theme.json —
+not style.css — is where color, typography, and spacing live. WordPress
+only reads the header comment above from this file; anything below is
+just a light reset / fallback layer for browsers with JS disabled.
+*/
+
+/* Minimal fallback so unstyled HTML never looks completely broken */
+img {
+	max-width: 100%;
+	height: auto;
+}
