@@ -1,69 +1,477 @@
 {
-	"$schema": "https://schemas.wp.org/trunk/theme.json",
-	"version": 3,
-	"settings": {
-		"appearanceTools": true,
-		"layout": {
-			"contentSize": "720px",
-			"wideSize": "1200px"
-		},
-		"color": {
-			"palette": [
-				{ "slug": "primary", "color": "#2C3E50", "name": "Primary — REPLACE with actual brand color" },
-				{ "slug": "secondary", "color": "#E67E22", "name": "Secondary — REPLACE with actual brand color" },
-				{ "slug": "background", "color": "#FFFFFF", "name": "Background" },
-				{ "slug": "foreground", "color": "#1A1A1A", "name": "Foreground / body text" },
-				{ "slug": "contrast", "color": "#F5F5F5", "name": "Light contrast / section background" }
-			]
-		},
-		"typography": {
-			"fontFamilies": [
-				{
-					"fontFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif",
-					"slug": "body",
-					"name": "Body — REPLACE with actual body font"
-				},
-				{
-					"fontFamily": "\"Quattrocento\", Georgia, serif",
-					"slug": "nav",
-					"name": "Quattrocento (confirmed current nav font)"
-				}
-			],
-			"fontSizes": [
-				{ "slug": "small", "size": "0.875rem", "name": "Small" },
-				{ "slug": "medium", "size": "1rem", "name": "Medium" },
-				{ "slug": "large", "size": "1.5rem", "name": "Large" },
-				{ "slug": "x-large", "size": "2.25rem", "name": "Extra Large" }
-			]
-		},
-		"spacing": {
-			"spacingScale": { "steps": 7 },
-			"units": ["px", "em", "rem", "%", "vh", "vw"]
-		}
-	},
-	"styles": {
-		"color": {
-			"background": "var(--wp--preset--color--background)",
-			"text": "var(--wp--preset--color--foreground)"
-		},
-		"typography": {
-			"fontFamily": "var(--wp--preset--font-family--body)"
-		},
-		"elements": {
-			"link": {
-				"color": { "text": "var(--wp--preset--color--secondary)" }
-			}
-		},
-		"blocks": {
-			"core/navigation": {
-				"typography": {
-					"fontFamily": "var(--wp--preset--font-family--nav)"
-				}
-			}
-		}
-	},
-	"templateParts": [
-		{ "name": "header", "title": "Header", "area": "header" },
-		{ "name": "footer", "title": "Footer", "area": "footer" }
-	]
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "settings": {
+    "appearanceTools": true,
+    "layout": {
+      "contentSize": "720px",
+      "wideSize": "1200px"
+    },
+    "css": {
+      "html": {
+        "scrollBehavior": "smooth"
+      }
+    },
+    "color": {
+      "palette": [
+        {
+          "slug": "white",
+          "color": "#FFFFFF",
+          "name": "White"
+        },
+        {
+          "slug": "black",
+          "color": "#000000",
+          "name": "Black"
+        },
+        {
+          "slug": "primary",
+          "color": "#1F5551",
+          "name": "Primary (deep teal)"
+        },
+        {
+          "slug": "primary-deep",
+          "color": "#163E3B",
+          "name": "Primary Deep (hover/press on primary fills)"
+        },
+        {
+          "slug": "teal",
+          "color": "#1EBCAC",
+          "name": "Teal (secondary, logo colour)"
+        },
+        {
+          "slug": "teal-deep",
+          "color": "#189A8D",
+          "name": "Teal Deep (hover/press on secondary fills)"
+        },
+        {
+          "slug": "teal-tint",
+          "color": "#E4F7F5",
+          "name": "Teal Tint (quiet wash background)"
+        },
+        {
+          "slug": "grey",
+          "color": "#F6F6F6",
+          "name": "Grey (section background)"
+        },
+        {
+          "slug": "grey-line",
+          "color": "#E3E3E3",
+          "name": "Grey Line (hairline)"
+        },
+        {
+          "slug": "butter",
+          "color": "#EDEAA7",
+          "name": "Butter (pale yellow highlight)"
+        },
+        {
+          "slug": "ink-60",
+          "color": "#5C5C5C",
+          "name": "Ink 60 (meta text, 6.7:1 on white)"
+        },
+        {
+          "slug": "ink-40",
+          "color": "#6E6E6E",
+          "name": "Ink 40 (muted/disabled, 4.7:1 on grey)"
+        },
+        {
+          "slug": "line-strong",
+          "color": "#8A8A8A",
+          "name": "Line Strong (form-control boundaries, 3.4:1 on white)"
+        }
+      ]
+    },
+    "typography": {
+      "fontFamilies": [
+        {
+          "fontFamily": "\"Poppins\", system-ui, sans-serif",
+          "slug": "body",
+          "name": "Poppins (body + card/teaser titles)",
+          "fontFace": [
+            {
+              "fontFamily": "Poppins",
+              "fontWeight": "300",
+              "fontStyle": "normal",
+              "fontDisplay": "swap",
+              "src": [
+                "file:./assets/fonts/Poppins-Light.woff2"
+              ]
+            },
+            {
+              "fontFamily": "Poppins",
+              "fontWeight": "300",
+              "fontStyle": "italic",
+              "fontDisplay": "swap",
+              "src": [
+                "file:./assets/fonts/Poppins-LightItalic.woff2"
+              ]
+            },
+            {
+              "fontFamily": "Poppins",
+              "fontWeight": "400",
+              "fontStyle": "normal",
+              "fontDisplay": "swap",
+              "src": [
+                "file:./assets/fonts/Poppins-Regular.woff2"
+              ]
+            },
+            {
+              "fontFamily": "Poppins",
+              "fontWeight": "400",
+              "fontStyle": "italic",
+              "fontDisplay": "swap",
+              "src": [
+                "file:./assets/fonts/Poppins-Italic.woff2"
+              ]
+            },
+            {
+              "fontFamily": "Poppins",
+              "fontWeight": "500",
+              "fontStyle": "normal",
+              "fontDisplay": "swap",
+              "src": [
+                "file:./assets/fonts/Poppins-Medium.woff2"
+              ]
+            },
+            {
+              "fontFamily": "Poppins",
+              "fontWeight": "500",
+              "fontStyle": "italic",
+              "fontDisplay": "swap",
+              "src": [
+                "file:./assets/fonts/Poppins-MediumItalic.woff2"
+              ]
+            },
+            {
+              "fontFamily": "Poppins",
+              "fontWeight": "600",
+              "fontStyle": "normal",
+              "fontDisplay": "swap",
+              "src": [
+                "file:./assets/fonts/Poppins-SemiBold.woff2"
+              ]
+            },
+            {
+              "fontFamily": "Poppins",
+              "fontWeight": "600",
+              "fontStyle": "italic",
+              "fontDisplay": "swap",
+              "src": [
+                "file:./assets/fonts/Poppins-SemiBoldItalic.woff2"
+              ]
+            },
+            {
+              "fontFamily": "Poppins",
+              "fontWeight": "700",
+              "fontStyle": "normal",
+              "fontDisplay": "swap",
+              "src": [
+                "file:./assets/fonts/Poppins-Bold.woff2"
+              ]
+            },
+            {
+              "fontFamily": "Poppins",
+              "fontWeight": "700",
+              "fontStyle": "italic",
+              "fontDisplay": "swap",
+              "src": [
+                "file:./assets/fonts/Poppins-BoldItalic.woff2"
+              ]
+            },
+            {
+              "fontFamily": "Poppins",
+              "fontWeight": "800",
+              "fontStyle": "normal",
+              "fontDisplay": "swap",
+              "src": [
+                "file:./assets/fonts/Poppins-ExtraBold.woff2"
+              ]
+            },
+            {
+              "fontFamily": "Poppins",
+              "fontWeight": "900",
+              "fontStyle": "normal",
+              "fontDisplay": "swap",
+              "src": [
+                "file:./assets/fonts/Poppins-Black.woff2"
+              ]
+            }
+          ]
+        },
+        {
+          "fontFamily": "\"Quattrocento\", Georgia, serif",
+          "slug": "display",
+          "name": "Quattrocento (headings + navigation)",
+          "fontFace": [
+            {
+              "fontFamily": "Quattrocento",
+              "fontWeight": "400",
+              "fontStyle": "normal",
+              "fontDisplay": "swap",
+              "src": [
+                "file:./assets/fonts/Quattrocento-Regular.woff2"
+              ]
+            },
+            {
+              "fontFamily": "Quattrocento",
+              "fontWeight": "700",
+              "fontStyle": "normal",
+              "fontDisplay": "swap",
+              "src": [
+                "file:./assets/fonts/Quattrocento-Bold.woff2"
+              ]
+            }
+          ]
+        }
+      ],
+      "fontSizes": [
+        {
+          "slug": "100",
+          "size": "0.75rem",
+          "name": "100 — Micro labels (12px)"
+        },
+        {
+          "slug": "200",
+          "size": "0.875rem",
+          "name": "200 — Small / meta (14px)"
+        },
+        {
+          "slug": "300",
+          "size": "1rem",
+          "name": "300 — Body (16px)"
+        },
+        {
+          "slug": "400",
+          "size": "1.125rem",
+          "name": "400 — Lead body (18px)"
+        },
+        {
+          "slug": "500",
+          "size": "1.5rem",
+          "name": "500 — Large / H3 (24px)"
+        },
+        {
+          "slug": "600",
+          "size": "1.875rem",
+          "name": "600 — H2 (30px)"
+        },
+        {
+          "slug": "700",
+          "size": "2.25rem",
+          "name": "700 — X-Large / H1 (36px)"
+        },
+        {
+          "slug": "800",
+          "size": "3rem",
+          "name": "800 — Page hero (48px)"
+        },
+        {
+          "slug": "900",
+          "size": "4.25rem",
+          "name": "900 — Full-bleed hero (68px)"
+        }
+      ]
+    },
+    "spacing": {
+      "spacingSizes": [
+        {
+          "slug": "0",
+          "size": "0",
+          "name": "0"
+        },
+        {
+          "slug": "1",
+          "size": "4px",
+          "name": "1 — 4px"
+        },
+        {
+          "slug": "2",
+          "size": "8px",
+          "name": "2 — 8px"
+        },
+        {
+          "slug": "3",
+          "size": "12px",
+          "name": "3 — 12px"
+        },
+        {
+          "slug": "4",
+          "size": "16px",
+          "name": "4 — 16px"
+        },
+        {
+          "slug": "5",
+          "size": "24px",
+          "name": "5 — 24px"
+        },
+        {
+          "slug": "6",
+          "size": "32px",
+          "name": "6 — 32px"
+        },
+        {
+          "slug": "7",
+          "size": "48px",
+          "name": "7 — 48px"
+        },
+        {
+          "slug": "8",
+          "size": "64px",
+          "name": "8 — 64px"
+        },
+        {
+          "slug": "9",
+          "size": "96px",
+          "name": "9 — 96px"
+        },
+        {
+          "slug": "10",
+          "size": "128px",
+          "name": "10 — 128px"
+        }
+      ],
+      "units": [
+        "px",
+        "em",
+        "rem",
+        "%",
+        "vh",
+        "vw"
+      ]
+    },
+    "shadow": {
+      "defaultPresets": false,
+      "presets": [
+        {
+          "name": "Card",
+          "slug": "card",
+          "shadow": "0 2px 10px rgba(0,0,0,0.06)"
+        },
+        {
+          "name": "Card Hover",
+          "slug": "card-hover",
+          "shadow": "0 8px 24px rgba(0,0,0,0.10)"
+        },
+        {
+          "name": "Overlay",
+          "slug": "overlay",
+          "shadow": "0 16px 40px rgba(0,0,0,0.16)"
+        }
+      ]
+    }
+  },
+  "styles": {
+    "color": {
+      "background": "var(--wp--preset--color--white)",
+      "text": "var(--wp--preset--color--black)"
+    },
+    "typography": {
+      "fontFamily": "var(--wp--preset--font-family--body)",
+      "fontSize": "var(--wp--preset--font-size--300)",
+      "fontWeight": "400",
+      "lineHeight": "1.7"
+    },
+    "elements": {
+      "link": {
+        "color": {
+          "text": "var(--wp--preset--color--primary)"
+        },
+        ":hover": {
+          "color": {
+            "text": "var(--wp--preset--color--black)"
+          }
+        }
+      },
+      "heading": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--display)",
+          "lineHeight": "1.25"
+        },
+        "color": {
+          "text": "var(--wp--preset--color--black)"
+        }
+      },
+      "h1": {
+        "typography": {
+          "fontSize": "var(--wp--preset--font-size--700)",
+          "fontWeight": "700"
+        }
+      },
+      "h2": {
+        "typography": {
+          "fontSize": "var(--wp--preset--font-size--600)",
+          "fontWeight": "700"
+        }
+      },
+      "h3": {
+        "typography": {
+          "fontSize": "var(--wp--preset--font-size--500)",
+          "fontWeight": "600"
+        }
+      },
+      "h4": {
+        "typography": {
+          "fontSize": "var(--wp--preset--font-size--400)",
+          "fontWeight": "600"
+        }
+      },
+      "h5": {
+        "typography": {
+          "fontSize": "var(--wp--preset--font-size--200)",
+          "fontWeight": "600"
+        }
+      },
+      "h6": {
+        "typography": {
+          "fontSize": "var(--wp--preset--font-size--200)",
+          "fontWeight": "600"
+        }
+      }
+    },
+    "blocks": {
+      "core/navigation": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--display)"
+        }
+      },
+      "core/quote": {
+        "color": {
+          "background": "var(--wp--preset--color--grey)"
+        },
+        "typography": {
+          "fontSize": "var(--wp--preset--font-size--400)"
+        },
+        "spacing": {
+          "margin": {
+            "top": "var(--wp--preset--spacing--6)",
+            "bottom": "var(--wp--preset--spacing--6)"
+          },
+          "padding": {
+            "top": "var(--wp--preset--spacing--5)",
+            "bottom": "var(--wp--preset--spacing--5)",
+            "left": "var(--wp--preset--spacing--6)",
+            "right": "var(--wp--preset--spacing--6)"
+          }
+        }
+      },
+      "core/separator": {
+        "color": {
+          "text": "var(--wp--preset--color--grey-line)"
+        }
+      }
+    },
+    "css": ":root{\n  --radius-none:0;\n  --radius-sm:4px;\n  --radius-md:8px;\n  --radius-pill:999px;\n  --border-width-hairline:1px;\n  --border-width-strong:2px;\n  --shadow-none:none;\n  --shadow-card:0 2px 10px rgba(0,0,0,0.06);\n  --shadow-card-hover:0 8px 24px rgba(0,0,0,0.10);\n  --shadow-overlay:0 16px 40px rgba(0,0,0,0.16);\n  --shadow-focus:0 0 0 3px rgba(31,85,81,0.35);\n  --scrim-image:linear-gradient(to top,rgba(0,0,0,0.68) 0%,rgba(0,0,0,0.28) 45%,rgba(0,0,0,0) 100%);\n  --duration-fast:120ms;\n  --duration-base:200ms;\n  --duration-slow:400ms;\n  --ease-standard:cubic-bezier(0.4,0,0.2,1);\n  --ease-out:cubic-bezier(0.16,1,0.3,1);\n  --transition-interactive:background-color var(--duration-base) var(--ease-standard),color var(--duration-base) var(--ease-standard),border-color var(--duration-base) var(--ease-standard),box-shadow var(--duration-base) var(--ease-standard);\n  --transition-media:transform var(--duration-slow) var(--ease-out);\n  --hover-media-scale:1.04;\n  --press-scale:0.98;\n}\n:focus-visible{outline:2px solid var(--shadow-focus, var(--wp--preset--color--primary));outline-offset:2px}\na{transition:var(--transition-interactive)}"
+  },
+  "templateParts": [
+    {
+      "name": "header",
+      "title": "Header",
+      "area": "header"
+    },
+    {
+      "name": "footer",
+      "title": "Footer",
+      "area": "footer"
+    }
+  ]
 }

@@ -7,5 +7,23 @@
 		<!-- wp:navigation {"layout":{"type":"flex","justifyContent":"right"}} /-->
 	</div>
 	<!-- /wp:group -->
+
+	<!-- wp:html -->
+	<div id="wftu-search-overlay" class="wftu-search-overlay" hidden>
+		<div class="wftu-search-overlay__inner">
+			<button type="button" class="wftu-search-overlay__close" aria-label="Close search">
+				Close
+				<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+			</button>
+			<form role="search" method="get" class="wftu-search-overlay__form" action="/">
+				<span class="wftu-search-overlay__eyebrow">Search the Blog</span>
+				<label class="wftu-search-overlay__field">
+					<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+					<input type="search" name="s" placeholder="Where are you headed?" autocomplete="off">
+				</label>
+			</form>
+		</div>
+	</div>
+	<!-- /wp:html -->
 </header>
 <!-- /wp:group -->
